@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_gis=self.webpackChunkgatsby_gis||[]).push([[682],{95518:function(t,n,e){e.r(n),e.d(n,{default:function(){return l}});e(67294);var u=e(75138),a=e(98712);function l(t){var n=t.data;return(0,a.tZ)(u.Z,null,(0,a.tZ)("h1",null,n.site.siteMetadata.title),(0,a.tZ)("p",null,"Unterlagen zur Vorlesung."))}}}]);
+//# sourceMappingURL=component---src-pages-about-js-92dba55440e24e42c949.js.map
