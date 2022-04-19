@@ -2,17 +2,17 @@
 </code></pre><pre><button>❮❯</button><span style="padding-left:0.5em">CSS</span><code class="language-css">#box {
   background-color: green;
 }
-</code></pre><pre><button>❮❯</button><span style="padding-left:0.5em">TypeScript</span><code class="language-ts">let box: HTMLElement = document.getElementById(&quot;box&quot;);
+</code></pre><pre><button>❮❯</button><span style="padding-left:0.5em">JavaScript</span><code class="language-js">let box = document.getElementById(&quot;box&quot;);
 box.addEventListener(&quot;click&quot;, divHi); // bubbling
 // box.addEventListener(&quot;click&quot;, divHi, true); // capturing
-function divHi(event: Event): void {
+function divHi(event) {
   console.log(&quot;div: Hi&quot;);
   console.log(event.currentTarget);
   console.log(event.target);
 }
-let button: HTMLElement = document.getElementsByTagName(&quot;button&quot;)[0];
+let button = document.getElementsByTagName(&quot;button&quot;)[0];
 button.addEventListener(&quot;click&quot;, buttonHi);
-function buttonHi(event: Event): void {
+function buttonHi(event) {
   console.log(&quot;button: Hi&quot;);
   // event.stopPropagation();
 }

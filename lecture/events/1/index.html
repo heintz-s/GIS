@@ -4,10 +4,10 @@
   width: 100px;
   height: 50px;
 }
-</code></pre><pre><button>❮❯</button><span style="padding-left:0.5em">TypeScript</span><code class="language-ts">let box: HTMLElement = document.getElementById(&quot;box&quot;);
+</code></pre><pre><button>❮❯</button><span style="padding-left:0.5em">JavaScript</span><code class="language-js">let box = document.getElementById(&quot;box&quot;);
 box.addEventListener(&quot;click&quot;, changeBGColor);
-function changeBGColor(event: Event): void {
-  let randomColor: string = Math.floor(Math.random() * 0xffffff).toString(16);
+function changeBGColor(event) {
+  let randomColor = Math.floor(Math.random() * 0xffffff).toString(16);
   event.currentTarget.setAttribute(
     &quot;style&quot;,
     `background-color: #${randomColor}`
