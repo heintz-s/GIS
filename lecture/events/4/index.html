@@ -4,7 +4,7 @@
     listener.push({type, handlerFkt});
   }
   function onEvent(type, eventInfos){
-    foreach(l in listener){
+    foreach(l of listener){
       if(l.type == type){
         l.handlerFkt(eventInfos)
       }
