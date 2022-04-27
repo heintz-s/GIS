@@ -17,8 +17,9 @@ let animationTime = null; // current animation time
 canvas.addEventListener(&#x27;click&#x27;, onClick);
 
 function onClick(evt) {
-  const x = evt.pageX - canvas.offsetLeft;
-  const y = evt.pageY - canvas.offsetTop;
+  const canvasClientRect = canvas.getBoundingClientRect();
+  const x = evt.clientX - canvasClientRect.x;
+  const y = evt.clientY - canvasClientRect.y;
 
   // create dot
   const dot = {
