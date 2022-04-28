@@ -16,14 +16,15 @@ const obj = new Object();
 
 // assign, modify and access property using the &#x27;.&#x27;-syntax
 obj.count = 0;
-object.count += 7;
+obj.count += 7;
 let count = obj.count; // is 7
 
 // assign, modify and access property using the &#x27;[]&#x27;-syntax
 obj[&#x27;count&#x27;] = 0;
-object[&#x27;count&#x27;] += 7;
-let count = obj[&#x27;count&#x27;]; // is 7
-</code></pre><p>Mit <code>delete</code> können Eigenschaften wieder aus einem Objekt gelöscht werden.</p><pre><button>❮❯</button><span style="padding-left:0.5em">JavaScript</span><code class="language-js">delete obj.count;
+obj[&#x27;count&#x27;] += 7;
+count = obj[&#x27;count&#x27;]; // is 7
+</code></pre><p>Mit <code>delete</code> können Eigenschaften wieder aus einem Objekt gelöscht werden.</p><pre><button>❮❯</button><span style="padding-left:0.5em">JavaScript</span><code class="language-js">const obj = { count: 7 };
+delete obj.count;
 </code></pre><h3>Verschachtelung und Referenzen</h3><p>Objekte und Arrays können beliebig verschachtelt werden.</p><pre><button>❮❯</button><span style="padding-left:0.5em">JavaScript</span><code class="language-js">const song = {
   title: &quot;Over the Rainbow&quot;,
   composer: &quot;Harold Arlen&quot;,
@@ -55,7 +56,7 @@ sondern nur eine Referenz darauf eingefügt wird.</p><pre><button>❮❯</button
 let p = o;
 p.d = 4; // { a: 1, b: 2, c: 3, d: 4}
 console.log(o.d); // 4
-</code></pre><h3>Methoden der Object Basis-Klasse</h3><p>Die <code>Object</code> <a href="" rel="noopener noreferrer nofollow">Basis-Klasse</a> stellt einige hilfreiche Methoden zur Verfügung:</p><table><thead><tr><th>Methode</th><th>Beschreibung</th></tr></thead><tbody><tr><td><code>keys()</code></td><td>gibt einen Array der Eigenschaften des Objects zurück</td></tr><tr><td><code>values()</code></td><td>gibt einen Array der Werte der Eigenschaften des Objects zurück</td></tr><tr><td><code>entries()</code></td><td>gibt einen Array von Key-Value-Paaren der Eigenschaften des Objects zurück</td></tr><tr><td><code>assign(target, ... sources)</code></td><td>kopiert die Werte der Eigenschaften eines oder mehrerer Quell-Objekte</td></tr></tbody></table><pre><button>❮❯</button><span style="padding-left:0.5em">JavaScript</span><code class="language-js">const dot = {
+</code></pre><h3>Methoden der Object Basis-Klasse</h3><p>Die <code>Object</code> <a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object" rel="noopener noreferrer nofollow">Basis-Klasse</a> stellt einige hilfreiche Methoden zur Verfügung:</p><table><thead><tr><th>Methode</th><th>Beschreibung</th></tr></thead><tbody><tr><td><code>keys()</code></td><td>gibt einen Array der Eigenschaften des Objects zurück</td></tr><tr><td><code>values()</code></td><td>gibt einen Array der Werte der Eigenschaften des Objects zurück</td></tr><tr><td><code>entries()</code></td><td>gibt einen Array von Key-Value-Paaren der Eigenschaften des Objects zurück</td></tr><tr><td><code>assign(target, ... sources)</code></td><td>kopiert die Werte der Eigenschaften eines oder mehrerer Quell-Objekte</td></tr></tbody></table><pre><button>❮❯</button><span style="padding-left:0.5em">JavaScript</span><code class="language-js">const dot = {
   x: 100,
   y: 100,
   size: 40,
