@@ -28,13 +28,13 @@ const server = http.createServer(async (request, response) =&gt; {
             if(url.searchParams.get(&#x27;studentNr&#x27;)){
               result = await studentCollection.find({
                 studentNr: Number(url.searchParams.get(&#x27;studentNr&#x27;)), // von String zu Zahl konvertieren
-              });
+              }).toArray();
             }
             else {
-              result = await studentCollection.find({});
+              result = await studentCollection.find({}).toArray();
             }
             response.setHeader(&#x27;Content-Type&#x27;, &#x27;application/json&#x27;);
-            response.write(JSON.stringify(result.toArray()));
+            response.write(JSON.stringify(result));
             break;
           case &#x27;POST&#x27;:
             let jsonString = &#x27;&#x27;;
@@ -97,7 +97,7 @@ async function test() {
 }
 
 test();
-</code></pre><h3>MongoId verwenden</h3><p>Meist wird keine eigene ID vergeben (wie bei studentenNr), sondern die automatisch von MongoDB erzeugte <!-- -->_<!-- -->id zum Zugriff (read, update, delete) verwendet</p><ul><li>diese wird automatisch beim Speichern jedes neuen Dokuments erstellt</li><li>dem JSON Datensatz wird dazu das Attribut <code>_id</code> hinzugefügt</li><li>es handelt sich dabei nicht um eine Zahl, sondern eine ObjektID -&gt; erfodert ggf. Umwandlung von Zahl/String zu ObjektID mit <code>new mongodb.ObjectId(id)</code></li></ul><p>Beispiel Verwendung im Code:</p><pre><span style="padding-left:0.5em">Code</span><code>result = await studentCollection.find({
-  _id: new mongodb.ObjectId(url.searchParams.get(&#x27;id&#x27;)), // von String zu Zahl konvertieren
+</code></pre><h3>MongoId verwenden</h3><p>Meist wird keine eigene ID vergeben (wie bei studentenNr), sondern die automatisch von MongoDB erzeugte <!-- -->_<!-- -->id zum Zugriff (read, update, delete) verwendet</p><ul><li>diese wird automatisch beim Speichern jedes neuen Dokuments erstellt</li><li>dem JavaScript Objekt wird dazu das Attribut <code>_id</code> hinzugefügt</li><li>es handelt sich dabei nicht um eine Zahl, sondern eine ObjektID -&gt; erfodert ggf. Umwandlung von Zahl/String zu ObjektID mit <code>new mongodb.ObjectId(id)</code></li></ul><p>Beispiel Verwendung im Code:</p><pre><span style="padding-left:0.5em">Code</span><code>result = await studentCollection.find({
+  _id: new mongodb.ObjectId(url.searchParams.get(&#x27;id&#x27;)), // von String/Zahl zu ObjectID konvertieren
 });
 </code></pre></div></div></div></div><div style="position:relative"><div style="height:1rem" role="presentation" class="sc-jRQAMF eiewAN Resizer horizontal css-27mtct"><div class="sc-eCImvq gPKxZi"><div style="flex-basis:120px" class="sc-iCfLBT dqWpFE"></div><div style="transform:scale(0);visibility:hidden;flex:0 0 0;position:relative" class="sc-hKwCoD fgBDdK"><style data-emotion="css 1btrxjf">.css-1btrxjf{width:1.7rem;height:1.7rem;border-radius:1000px;background:grey;font-size:1.1rem;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;text-align:center;color:white;}</style><div class="css-1btrxjf">˄</div></div><div style="flex-basis:80px" class="sc-iCfLBT dqWpFE"></div></div></div><div style="opacity:0;height:1px;display:none" class="sc-gKckTs fovwAN"></div><div style="opacity:0;visibility:hidden;height:1px;background-color:rgba(120, 120, 120, 0.6)" class="sc-gKckTs fovwAN"></div></div><div class="sc-bdvvaa fopGRJ Pane horizontal css-27mtct" style="flex-basis:1px"><div style="background:rgba(220,220,220, 0.1)" class="sc-dkPtyc jjVRIJ"></div><div style="min-height:50px" class="sc-gsDJrp XACXZ"></div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/lecture/db2/7";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-947b85ed99c8f16bbbac.js"],"app":["/app-ee405a5c7595345ddaa9.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-7b5c1a05b0aa982cb0e5.js"],"component---src-components-lecture-page-layout-js":["/component---src-components-lecture-page-layout-js-f636b770eec1c3c91666.js"],"component---src-pages-about-js":["/component---src-pages-about-js-92dba55440e24e42c949.js"],"component---src-pages-index-js":["/component---src-pages-index-js-c6169d1ef6bbbfc4a2d1.js"],"component---src-pages-my-files-js":["/component---src-pages-my-files-js-47b78ef316d633e73035.js"]};/*]]>*/</script><script src="/GIS/polyfill-947b85ed99c8f16bbbac.js" nomodule=""></script><script src="/GIS/component---src-components-lecture-page-layout-js-f636b770eec1c3c91666.js" async=""></script><script src="/GIS/14a6963bea2c503da587f31645bf1d7b6f7e6373-c80a05e8b9b937f5e3a8.js" async=""></script><script src="/GIS/88682331-4fa103230dd5c1b9e7b7.js" async=""></script><script src="/GIS/app-ee405a5c7595345ddaa9.js" async=""></script><script src="/GIS/framework-14fd61d1ed8e5c189f6d.js" async=""></script><script src="/GIS/webpack-runtime-f14a298f7be2c28b7fe1.js" async=""></script></body></html>
