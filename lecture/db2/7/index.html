@@ -3,7 +3,7 @@ const mongodb = require(&#x27;mongodb&#x27;);
 
 const hostname = &#x27;127.0.0.1&#x27;; // localhost
 const port = 3000;
-const url = &#x27;mongodb://localhost:27017&#x27;; // für lokale MongoDB
+const url = &#x27;mongodb://127.0.0.1:27017&#x27;; // für lokale MongoDB
 const mongoClient = new mongodb.MongoClient(url);
 
 async function startServer() {
