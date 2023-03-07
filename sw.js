@@ -27,17 +27,17 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-f14a298f7be2c28b7fe1.js"
+    "url": "webpack-runtime-fb57918c1b0848a1d4a7.js"
   },
   {
     "url": "framework-14fd61d1ed8e5c189f6d.js"
   },
   {
-    "url": "app-ee405a5c7595345ddaa9.js"
+    "url": "app-b67af1c2e44cf9bf26f8.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "3470988b875aae13f5f220bf5816c38d"
+    "revision": "560e87e9984a3034b612c687759a498c"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-7b5c1a05b0aa982cb0e5.js"
@@ -48,7 +48,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "fea38e0c9cced6bf6ae5f6bb240cbdbb"
+    "revision": "2f3ed19c3ff8d06f06202cba9a77db64"
   },
   {
     "url": "polyfill-947b85ed99c8f16bbbac.js"
@@ -147,7 +147,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/GIS/app-ee405a5c7595345ddaa9.js`))) {
+  if (!resources || !(await caches.match(`/GIS/app-b67af1c2e44cf9bf26f8.js`))) {
     return await fetch(event.request)
   }
 
